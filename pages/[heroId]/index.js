@@ -33,32 +33,33 @@ export default function HeroDetails({ heroData }) {
     )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     const heroId = context.params.heroId;
 
     const resp = await fetch(`https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/id/${heroId}.json`);
     const response = await resp.json();
+    console.log('response', response);
 
     return {
         props: {
             heroData: {
                 id: response.id,
                 name: response.name,
-                image: response.images?.sm,
+                image: response.images?.md,
                 description: response.work?.occupation,
             }
         }
     }
 };
 
-export async function getStaticPaths() {
+// export async function getStaticPaths() {
 
-    const heroes = [1, 2, 3, 4, 5, 6, 7, 8];
+//     const heroes = [1, 2, 3, 4, 5, 6, 7, 8];
 
-    return {
-        fallback: true,
-        paths: heroes.map((hero) => ({
-            params: { heroId: hero.toString() },
-        })),
-    }
-};
+//     return {
+//         fallback: true,
+//         paths: heroes.map((hero) => ({
+//             params: { heroId: hero.toString() },
+//         })),
+//     }
+// };
