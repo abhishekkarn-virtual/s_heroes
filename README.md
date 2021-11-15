@@ -1,3 +1,6 @@
+This project was created in order to gain hands on expereience with the og tags that is helpful in creating detailed sharable links.
+Rest if the projects is NextJS based. The functionality is achieves with the help of Head tag of NextJS.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
